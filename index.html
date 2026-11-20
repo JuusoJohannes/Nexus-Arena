@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080b16">
+  <meta name="description" content="NEXUS ARENA — futuristinen pelikeskus, minipelit, saavutukset ja pelaajaprofiili.">
+  <title>NEXUS ARENA — Gaming Hub</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Nexus Arena etusivu">
+      <span class="brand-mark">N</span><span>NEXUS<span class="brand-light">ARENA</span></span>
+    </a>
+    <div class="top-actions">
+      <div class="wallet"><span>◈</span><strong id="top-coins">0</strong><small>NC</small></div>
+      <button class="avatar-button" id="avatar-open" aria-label="Avaa profiili">P1</button>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="side-label">MAIN MENU</div>
+      <button class="nav-link active" data-page="home"><span>⌂</span> Yleiskatsaus</button>
+      <button class="nav-link" data-page="games"><span>▣</span> Pelikeskus <i id="game-count">03</i></button>
+      <button class="nav-link" data-page="missions"><span>◎</span> Tehtävät</button>
+      <button class="nav-link" data-page="achievements"><span>✧</span> Saavutukset</button>
+      <button class="nav-link" data-page="leaderboard"><span>♜</span> Tulostaulukko</button>
+      <div class="side-label side-label-spaced">PERSONAL</div>
+      <button class="nav-link" data-page="shop"><span>◇</span> Pelikauppa</button>
+      <button class="nav-link" data-page="profile"><span>◉</span> Pelaajaprofiili</button>
+      <button class="nav-link" data-page="settings"><span>⚙</span> Asetukset</button>
+      <div class="sidebar-bottom">
+        <div class="online-indicator"><span></span> JÄRJESTELMÄ TOIMINNASSA</div>
+        <div class="version">NEXUS CORE <b>v1.0.0</b></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <section class="page active" id="page-home">
+        <div class="welcome-row">
+          <div><div class="eyebrow"><span class="pulse"></span> SYSTEM ONLINE / PLAYER HUB</div>
+            <h1>Tervetuloa takaisin,<br><span id="welcome-name" class="gradient-text">PLAYER ONE</span></h1>
+            <p class="subtext">Valmiina seuraavaan haasteeseen?</p></div>
+          <div class="date-chip" id="today-label">NEXUS NETWORK</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-content">
+            <div class="hero-tag">✦ SUOSITELTU PELI</div>
+            <h2>NEON<br>REFLEX</h2>
+            <p>Testaa reaktionopeutesi. Osu neon-kohteisiin ennen ajan loppumista ja kerää krediittejä.</p>
+            <button class="primary-btn" data-launch="reflex">PELAA NYT <span>↗</span></button>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+            <div class="core"><span>N</span></div><div class="hero-spark spark-one"></div><div class="hero-spark spark-two"></div>
+            <div class="hero-art-label">NEXUS<br><b>PROTOCOL</b></div>
+          </div>
+          <div class="hero-index">01 / 03</div>
+        </div>
+        <div class="section-heading"><div><div class="eyebrow">PLAYER OVERVIEW</div><h2>Tilannekatsaus</h2></div><button class="text-btn" data-page-link="profile">Näytä profiili ↗</button></div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-icon cyan">✧</div><span class="stat-label">PELAAJATASO</span><strong id="home-level">1</strong><small id="home-rank">Rookie</small></article>
+          <article class="stat-card"><div class="stat-icon purple">◈</div><span class="stat-label">KOKEMUSPISTEET</span><strong id="home-xp">0</strong><small>XP kerätty</small></article>
+          <article class="stat-card"><div class="stat-icon gold">◆</div><span class="stat-label">KREDIITIT</span><strong id="home-coins">0</strong><small>Nexus Coins</small></article>
+          <article class="stat-card"><div class="stat-icon green">♜</div><span class="stat-label">PELATTUJA PELEJÄ</span><strong id="home-games">0</strong><small>Kaikki pelit</small></article>
+        </div>
+        <div class="content-grid">
+          <article class="panel">
+            <div class="panel-heading"><div><div class="eyebrow">YOUR PROGRESS</div><h3>Seuraava taso</h3></div><span class="level-pill" id="level-pill">LVL 1</span></div>
+            <div class="xp-row"><span id="xp-progress-label">0 / 100 XP</span><b id="xp-percent">0%</b></div>
+            <div class="progress-track"><div id="xp-progress" class="progress-fill"></div></div>
+            <p class="muted small">Kerää kokemusta pelaamalla ja suorittamalla tehtäviä.</p>
+          </article>
+          <article class="panel daily-panel">
+            <div class="panel-heading"><div><div class="eyebrow">DAILY DROP</div><h3>Päivän bonus</h3></div><span class="bonus-icon">✦</span></div>
+            <p class="muted">Kirjaudu sisään ja lunasta päivän krediitit.</p>
+            <button class="secondary-btn full-btn" id="daily-claim">LUNASTA +50 NC</button>
+            <small id="daily-status" class="muted"></small>
+          </article>
+        </div>
+        <div class="section-heading"><div><div class="eyebrow">QUICK ACCESS</div><h2>Suositut pelit</h2></div><button class="text-btn" data-page-link="games">Kaikki pelit ↗</button></div>
+        <div class="game-cards">
+          <article class="game-card game-cyan"><div class="game-symbol">⌁</div><div class="game-info"><span class="game-type">REACTION / ARCADE</span><h3>Neon Reflex</h3><p>Osu kohteisiin ennen ajan loppumista.</p><button class="small-play" data-launch="reflex">Pelaa →</button></div></article>
+          <article class="game-card game-purple"><div class="game-symbol">▦</div><div class="game-info"><span class="game-type">MEMORY / PUZZLE</span><h3>Memory Grid</h3><p>Muista ruudukon välähdykset.</p><button class="small-play" data-launch="memory">Pelaa →</button></div></article>
+          <article class="game-card game-green"><div class="game-symbol">01</div><div class="game-info"><span class="game-type">NUMBER / CHALLENGE</span><h3>Number Rush</h3><p>Valitse numerot oikeassa järjestyksessä.</p><button class="small-play" data-launch="numbers">Pelaa →</button></div></article>
+        </div>
+      </section>
+
+      <section class="page" id="page-games">
+        <div class="page-title"><div class="eyebrow">ARCADE CENTER / 03 GAMES</div><h1>Pelikeskus<span class="title-dot">.</span></h1><p class="subtext">Valitse haaste ja kerää pisteitä, XP:tä sekä krediittejä.</p></div>
+        <div class="game-cards game-cards-large">
+          <article class="game-card game-cyan"><div class="game-symbol">⌁</div><div class="game-info"><span class="game-type">REACTION / 20 SEC</span><h3>Neon Reflex</h3><p>Osu mahdollisimman moneen neon-kohteeseen 20 sekunnissa. Jokainen osuma tuo pisteitä.</p><div class="game-meta"><span>✦ +10 XP / piste</span><span>◈ Krediittipalkinto</span></div><button class="primary-btn" data-launch="reflex">KÄYNNISTÄ PELI ↗</button></div></article>
+          <article class="game-card game-purple"><div class="game-symbol">▦</div><div class="game-info"><span class="game-type">MEMORY / 5 ROUNDS</span><h3>Memory Grid</h3><p>Katso ruudukon valot ja toista niiden järjestys. Jokainen kierros on edellistä pidempi.</p><div class="game-meta"><span>✦ Muistiharjoitus</span><span>◈ Palkinto kierroksista</span></div><button class="primary-btn" data-launch="memory">KÄYNNISTÄ PELI ↗</button></div></article>
+          <article class="game-card game-green"><div class="game-symbol">01</div><div class="game-info"><span class="game-type">NUMBER / 30 SEC</span><h3>Number Rush</h3><p>Napauta numeroita 1–20 oikeassa järjestyksessä ennen ajan loppumista.</p><div class="game-meta"><span>✦ Nopeushaaste</span><span>◈ Palkinto osumista</span></div><button class="primary-btn" data-launch="numbers">KÄYNNISTÄ PELI ↗</button></div></article>
+        </div>
+      </section>
+
+      <section class="page" id="page-missions">
+        <div class="page-title"><div class="eyebrow">OBJECTIVES / DAILY OPERATIONS</div><h1>Tehtävät<span class="title-dot">.</span></h1><p class="subtext">Suorita tavoitteita ja lunasta lisäpalkintoja.</p></div>
+        <div class="panel mission-panel" id="mission-list"></div>
+      </section>
+
+      <section class="page" id="page-achievements">
+        <div class="page-title"><div class="eyebrow">MILESTONES / COLLECTION</div><h1>Saavutukset<span class="title-dot">.</span></h1><p class="subtext">Pysyvät merkit saavutetuista virstanpylväistä.</p></div>
+        <div class="achievement-grid" id="achievement-list"></div>
+      </section>
+
+      <section class="page" id="page-leaderboard">
+        <div class="page-title"><div class="eyebrow">RANKING / LOCAL RECORDS</div><h1>Tulostaulukko<span class="title-dot">.</span></h1><p class="subtext">Omat ennätyksesi eri pelimuodoissa.</p></div>
+        <div class="panel">
+          <div class="panel-heading"><div><div class="eyebrow">PERSONAL BESTS</div><h3>Omat ennätykset</h3></div><span class="live-pill">LOCAL</span></div>
+          <div class="leader-row leader-head"><span>#</span><span>PELIMUOTO</span><span>ENNÄTYS</span></div>
+          <div class="leader-row"><span class="rank-number">01</span><span class="leader-name">⌁ Neon Reflex</span><strong id="best-reflex">0</strong></div>
+          <div class="leader-row"><span class="rank-number">02</span><span class="leader-name">▦ Memory Grid</span><strong id="best-memory">0</strong></div>
+          <div class="leader-row"><span class="rank-number">03</span><span class="leader-name">01 Number Rush</span><strong id="best-numbers">0</strong></div>
+          <p class="muted small">Tämä tulostaulukko tallentaa tämän selaimen paikalliset ennätykset. Se ei ole vielä yhteinen verkkotulostaulukko.</p>
+        </div>
+      </section>
+
+      <section class="page" id="page-shop">
+        <div class="page-title"><div class="eyebrow">NEXUS MARKET / CUSTOMIZATION</div><h1>Pelikauppa<span class="title-dot">.</span></h1><p class="subtext">Avaa teemoja ja muokkaa pelikeskuksen ilmettäsi.</p></div>
+        <div class="shop-balance">◈ <strong id="shop-coins">0</strong> <span>NC KÄYTETTÄVISSÄ</span></div>
+        <div class="shop-grid" id="shop-list"></div>
+      </section>
+
+      <section class="page" id="page-profile">
+        <div class="page-title"><div class="eyebrow">IDENTITY / PLAYER DATA</div><h1>Pelaajaprofiili<span class="title-dot">.</span></h1></div>
+        <div class="profile-layout">
+          <div class="panel profile-card">
+            <div class="profile-avatar" id="profile-avatar">P1</div>
+            <h2 id="profile-display-name">PLAYER ONE</h2><span class="level-pill" id="profile-level">LEVEL 1</span>
+            <p class="muted" id="profile-rank">Rookie</p>
+            <div class="profile-divider"></div>
+            <div class="profile-mini-stats"><div><strong id="profile-games">0</strong><small>PELEJÄ</small></div><div><strong id="profile-xp">0</strong><small>XP</small></div><div><strong id="profile-achievements">0</strong><small>MERKIT</small></div></div>
+          </div>
+          <div class="panel">
+            <div class="eyebrow">EDIT IDENTITY</div><h3>Muokkaa profiilia</h3>
+            <label class="field-label" for="name-input">Pelaajan nimi</label><input id="name-input" maxlength="18" placeholder="PLAYER ONE">
+            <button class="primary-btn full-btn" id="save-name">TALLENNA NIMI</button>
+            <p class="muted small">Nimi tallennetaan tämän selaimen tietoihin.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="page-settings">
+        <div class="page-title"><div class="eyebrow">SYSTEM / PREFERENCES</div><h1>Asetukset<span class="title-dot">.</span></h1></div>
+        <div class="panel settings-panel">
+          <div class="setting-row"><div><strong>Äänitehosteet</strong><p class="muted small">Pelin yksinkertaiset äänimerkit.</p></div><label class="switch"><input type="checkbox" id="sound-toggle"><span></span></label></div>
+          <div class="setting-row"><div><strong>Värinäefekti</strong><p class="muted small">Tukee laitteita, joissa värinä on sallittu.</p></div><label class="switch"><input type="checkbox" id="vibration-toggle"><span></span></label></div>
+          <div class="setting-row"><div><strong>Vie tallennus</strong><p class="muted small">Lataa varmuuskopio pelaajaprofiilistasi.</p></div><button class="secondary-btn" id="export-data">VIE JSON ↓</button></div>
+          <div class="setting-row"><div><strong>Tuo tallennus</strong><p class="muted small">Palauta aiemmin viety JSON-varmuuskopio.</p></div><label class="secondary-btn file-label">TUO JSON ↑<input type="file" id="import-data" accept=".json,application/json" hidden></label></div>
+          <div class="setting-row danger-row"><div><strong>Nollaa pelitiedot</strong><p class="muted small">Poistaa tämän selaimen NEXUS ARENA -tallennuksen.</p></div><button class="danger-btn" id="reset-data">NOLLAA</button></div>
+        </div>
+        <div class="panel"><div class="eyebrow">ABOUT NEXUS</div><h3>NEXUS ARENA v1.0.0</h3><p class="muted small">Staattinen selainpohjainen pelialusta. Tiedot tallentuvat selaimen paikalliseen tallennustilaan. Käytä vientitoimintoa, jos haluat siirtää tallennuksen toiselle laitteelle.</p></div>
+      </section>
+    </main>
+  </div>
+
+  <nav class="mobile-nav" aria-label="Päänavigaatio">
+    <button class="active" data-page="home"><span>⌂</span>Etusivu</button>
+    <button data-page="games"><span>▣</span>Pelit</button>
+    <button data-page="missions"><span>◎</span>Tehtävät</button>
+    <button data-page="shop"><span>◇</span>Kauppa</button>
+    <button data-page="profile"><span>◉</span>Profiili</button>
+  </nav>
+
+  <div class="modal-backdrop" id="game-modal" aria-hidden="true">
+    <div class="game-modal panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-top"><div><div class="eyebrow">NEXUS ARCADE / GAME SESSION</div><h2 id="modal-title">NEON REFLEX</h2></div><button class="icon-btn" id="close-modal" aria-label="Sulje">✕</button></div>
+      <div id="modal-game-content"></div>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
